@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ImportGroup Label="PropertySheets" />
+  <PropertyGroup Label="UserMacros">
+    <NagisaDir>$(NGS_ROOT)</NagisaDir>
+  </PropertyGroup>
+  <PropertyGroup>
+    <OutDir>$(SolutionDir)bin\$(Platform)\$(Configuration)\$(ProjectName)\</OutDir>
+    <IntDir>$(SolutionDir)temp\compile\$(ProjectName)\$(Platform)\$(Configuration)\$(ProjectName)\</IntDir>
+    <IncludePath>$(NagisaRoot)include\;$(IncludePath)</IncludePath>
+    <TargetExt>.exe</TargetExt>
+    <CopyFileAfterTargets />
+    <CopyFileBeforeTargets />
+    <ExecutablePath>$(SolutionDir)bin;$(ExecutablePath)</ExecutablePath>
+  </PropertyGroup>
+  <ItemDefinitionGroup>
+    <ClCompile>
+      <AdditionalIncludeDirectories>$(NagisaDir)/include\;$(ProjectDir)/include/;$(ProjectDir)..\..\include\;$(SolutionDir)include\;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <LanguageStandard>stdcpplatest</LanguageStandard>
+      <LanguageStandard_C>stdc17</LanguageStandard_C>
+      <PreprocessorDefinitions>_UNICODE;UNICODE;_CRT_SECURE_NO_WARNINGS;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <UseStandardPreprocessor>true</UseStandardPreprocessor>
+    </ClCompile>
+    <Link>
+      <AdditionalLibraryDirectories>$(SolutionDir)lib;$(SolutionDir)lib\$(Platform)\$(Configuration)\;$(ProjectDir)..\..\lib\$(Platform)\$(Configuration)\;$(ProjectDir)..\..\lib\;$(NagisaRoot)msvc\bin\;$(NagisaRoot)msvc\lib\</AdditionalLibraryDirectories>
+    </Link>
+    <CopyFileToFolders>
+      <DestinationFolders />
+    </CopyFileToFolders>
+    <CopyFileToFolders>
+      <DestinationFileName />
+    </CopyFileToFolders>
+  </ItemDefinitionGroup>
+  <ItemGroup>
+    <BuildMacro Include="NagisaDir">
+      <Value>$(NagisaDir)</Value>
+      <EnvironmentVariable>true</EnvironmentVariable>
+    </BuildMacro>
+  </ItemGroup>
+</Project>

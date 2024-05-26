@@ -1,0 +1,94 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ImportGroup Label="PropertySheets" />
+  <PropertyGroup Label="UserMacros">
+    <ESP_IDF>G:\SDK\Espressif\frameworks\esp-idf-v5.0.2\</ESP_IDF>
+    <ESP_IDF_COMPONENTS>$(ESP_IDF)components\</ESP_IDF_COMPONENTS>
+    <ESP_IDF_DRIVERS>$(ESP_IDF_COMPONENTS)driver\include\</ESP_IDF_DRIVERS>
+    <ESP_IDF_ESP_COMMON>$(ESP_IDF_COMPONENTS)esp_common\include\</ESP_IDF_ESP_COMMON>
+    <ESP_IDF_SOC>$(ESP_IDF_COMPONENTS)soc\</ESP_IDF_SOC>
+    <ESP_IDF_SOC_S3>$(ESP_IDF_SOC)esp32s3\include\</ESP_IDF_SOC_S3>
+    <ESP_IDF_FREERTOS>$(ESP_IDF_COMPONENTS)freertos\</ESP_IDF_FREERTOS>
+    <ESP_IDF_FREERTOS_XTENSA>$(ESP_IDF_FREERTOS)FreeRTOS-Kernel\include\</ESP_IDF_FREERTOS_XTENSA>
+    <ESP_IDF_HAL>$(ESP_IDF_COMPONENTS)hal\include\</ESP_IDF_HAL>
+    <ESP_IDF_HW>$(ESP_IDF_COMPONENTS)esp_hw_support\include\</ESP_IDF_HW>
+    <ESP_IDF_ROM>$(ESP_IDF_COMPONENTS)esp_rom\include\</ESP_IDF_ROM>
+    <ESP_IDF_PORTABLE>$(ESP_IDF_FREERTOS)FreeRTOS-Kernel\portable\riscv\include\</ESP_IDF_PORTABLE>
+    <ESP_IDF_HEAP>$(ESP_IDF_COMPONENTS)heap\include\</ESP_IDF_HEAP>
+    <ESP_IDF_SYSTEM>$(ESP_IDF_COMPONENTS)esp_system\include\</ESP_IDF_SYSTEM>
+    <ESP_IDF_NEW_LIB>$(ESP_IDF_COMPONENTS)newlib\platform_include\</ESP_IDF_NEW_LIB>
+    <ESP_IDF_INCLUDE_DIR>$(ESP_IDF_DRIVERS);$(ESP_IDF_ESP_COMMON);$(ESP_IDF_SOC_S3);$(ESP_IDF_FREERTOS_XTENSA);$(ESP_IDF_HAL);$(ESP_IDF_HW);$(ESP_IDF_ROM);$(ESP_IDF_PORTABLE);$(ESP_IDF_HEAP);$(ESP_IDF_SYSTEM);</ESP_IDF_INCLUDE_DIR>
+  </PropertyGroup>
+  <PropertyGroup />
+  <ItemDefinitionGroup>
+    <ClCompile>
+      <AdditionalIncludeDirectories>$(NagisaDir)include\NGS\osapi\esp\temp_config\;$(ESP_IDF_INCLUDE_DIR);%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+    </ClCompile>
+  </ItemDefinitionGroup>
+  <ItemGroup>
+    <BuildMacro Include="ESP_IDF">
+      <Value>$(ESP_IDF)</Value>
+      <EnvironmentVariable>true</EnvironmentVariable>
+    </BuildMacro>
+    <BuildMacro Include="ESP_IDF_COMPONENTS">
+      <Value>$(ESP_IDF_COMPONENTS)</Value>
+      <EnvironmentVariable>true</EnvironmentVariable>
+    </BuildMacro>
+    <BuildMacro Include="ESP_IDF_DRIVERS">
+      <Value>$(ESP_IDF_DRIVERS)</Value>
+      <EnvironmentVariable>true</EnvironmentVariable>
+    </BuildMacro>
+    <BuildMacro Include="ESP_IDF_ESP_COMMON">
+      <Value>$(ESP_IDF_ESP_COMMON)</Value>
+      <EnvironmentVariable>true</EnvironmentVariable>
+    </BuildMacro>
+    <BuildMacro Include="ESP_IDF_SOC">
+      <Value>$(ESP_IDF_SOC)</Value>
+      <EnvironmentVariable>true</EnvironmentVariable>
+    </BuildMacro>
+    <BuildMacro Include="ESP_IDF_SOC_S3">
+      <Value>$(ESP_IDF_SOC_S3)</Value>
+      <EnvironmentVariable>true</EnvironmentVariable>
+    </BuildMacro>
+    <BuildMacro Include="ESP_IDF_FREERTOS">
+      <Value>$(ESP_IDF_FREERTOS)</Value>
+      <EnvironmentVariable>true</EnvironmentVariable>
+    </BuildMacro>
+    <BuildMacro Include="ESP_IDF_FREERTOS_XTENSA">
+      <Value>$(ESP_IDF_FREERTOS_XTENSA)</Value>
+      <EnvironmentVariable>true</EnvironmentVariable>
+    </BuildMacro>
+    <BuildMacro Include="ESP_IDF_HAL">
+      <Value>$(ESP_IDF_HAL)</Value>
+      <EnvironmentVariable>true</EnvironmentVariable>
+    </BuildMacro>
+    <BuildMacro Include="ESP_IDF_HW">
+      <Value>$(ESP_IDF_HW)</Value>
+      <EnvironmentVariable>true</EnvironmentVariable>
+    </BuildMacro>
+    <BuildMacro Include="ESP_IDF_ROM">
+      <Value>$(ESP_IDF_ROM)</Value>
+      <EnvironmentVariable>true</EnvironmentVariable>
+    </BuildMacro>
+    <BuildMacro Include="ESP_IDF_PORTABLE">
+      <Value>$(ESP_IDF_PORTABLE)</Value>
+      <EnvironmentVariable>true</EnvironmentVariable>
+    </BuildMacro>
+    <BuildMacro Include="ESP_IDF_HEAP">
+      <Value>$(ESP_IDF_HEAP)</Value>
+      <EnvironmentVariable>true</EnvironmentVariable>
+    </BuildMacro>
+    <BuildMacro Include="ESP_IDF_SYSTEM">
+      <Value>$(ESP_IDF_SYSTEM)</Value>
+      <EnvironmentVariable>true</EnvironmentVariable>
+    </BuildMacro>
+    <BuildMacro Include="ESP_IDF_NEW_LIB">
+      <Value>$(ESP_IDF_NEW_LIB)</Value>
+      <EnvironmentVariable>true</EnvironmentVariable>
+    </BuildMacro>
+    <BuildMacro Include="ESP_IDF_INCLUDE_DIR">
+      <Value>$(ESP_IDF_INCLUDE_DIR)</Value>
+      <EnvironmentVariable>true</EnvironmentVariable>
+    </BuildMacro>
+  </ItemGroup>
+</Project>
