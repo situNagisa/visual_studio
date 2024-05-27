@@ -22,7 +22,7 @@
       <UseStandardPreprocessor>true</UseStandardPreprocessor>
     </ClCompile>
     <Link>
-      <AdditionalLibraryDirectories>$(SolutionDir)lib;$(SolutionDir)lib\$(Platform)\$(Configuration)\;$(ProjectDir)..\..\lib\$(Platform)\$(Configuration)\;$(ProjectDir)..\..\lib\;$(NagisaRoot)msvc\bin\;$(NagisaRoot)msvc\lib\</AdditionalLibraryDirectories>
+      <AdditionalLibraryDirectories>$(SolutionDir)lib;$(SolutionDir)lib\$(Platform)\$(Configuration)\;$(SolutionDir)lib\$(Platform)\;$(ProjectDir)..\..\lib\$(Platform)\$(Configuration)\;$(ProjectDir)..\..\lib\;$(NagisaRoot)msvc\bin\;$(NagisaRoot)msvc\lib\</AdditionalLibraryDirectories>
     </Link>
     <CopyFileToFolders>
       <DestinationFolders />
