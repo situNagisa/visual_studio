@@ -2,12 +2,13 @@
 <Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <ImportGroup Label="PropertySheets" />
   <PropertyGroup Label="UserMacros">
-    <NagisaDir>$(NGS_ROOT)</NagisaDir>
+    <NagisaDir>$(NAGISA_ROOT)</NagisaDir>
+    <NGSDir>$(NGS_ROOT)</NGSDir>
   </PropertyGroup>
   <PropertyGroup>
     <OutDir>$(SolutionDir)bin\$(Platform)\$(Configuration)\$(ProjectName)\</OutDir>
     <IntDir>$(SolutionDir)temp\compile\$(ProjectName)\$(Platform)\$(Configuration)\$(ProjectName)\</IntDir>
-    <IncludePath>$(NagisaRoot)include\;$(IncludePath)</IncludePath>
+    <IncludePath>$(NagisaDir)include\;$(NGSDir)\include\;$(IncludePath)</IncludePath>
     <TargetExt>.exe</TargetExt>
     <CopyFileAfterTargets />
     <CopyFileBeforeTargets />
@@ -15,11 +16,12 @@
   </PropertyGroup>
   <ItemDefinitionGroup>
     <ClCompile>
-      <AdditionalIncludeDirectories>$(NagisaDir)/include\;$(ProjectDir)/include/;$(ProjectDir)..\..\include\;$(SolutionDir)include\;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>$(ProjectDir)/include/;$(ProjectDir)..\..\include\;$(SolutionDir)include\;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <LanguageStandard>stdcpplatest</LanguageStandard>
       <LanguageStandard_C>stdc17</LanguageStandard_C>
       <PreprocessorDefinitions>_UNICODE;UNICODE;_CRT_SECURE_NO_WARNINGS;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <UseStandardPreprocessor>true</UseStandardPreprocessor>
+      <AdditionalOptions>/Zc:__cplusplus %(AdditionalOptions)</AdditionalOptions>
     </ClCompile>
     <Link>
       <AdditionalLibraryDirectories>$(SolutionDir)lib;$(SolutionDir)lib\$(Platform)\$(Configuration)\;$(SolutionDir)lib\$(Platform)\;$(ProjectDir)..\..\lib\$(Platform)\$(Configuration)\;$(ProjectDir)..\..\lib\;$(NagisaRoot)msvc\bin\;$(NagisaRoot)msvc\lib\</AdditionalLibraryDirectories>
@@ -34,6 +36,10 @@
   <ItemGroup>
     <BuildMacro Include="NagisaDir">
       <Value>$(NagisaDir)</Value>
+      <EnvironmentVariable>true</EnvironmentVariable>
+    </BuildMacro>
+    <BuildMacro Include="NGSDir">
+      <Value>$(NGSDir)</Value>
       <EnvironmentVariable>true</EnvironmentVariable>
     </BuildMacro>
   </ItemGroup>
